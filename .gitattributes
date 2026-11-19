@@ -1,0 +1,2 @@
+# Keep the provided test file byte-for-byte as received (CRLF line endings).
+test_virtual_column.py -text

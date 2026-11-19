@@ -1,0 +1,37 @@
+[project]
+name = "virtual-column"
+version = "0.1.0"
+description = "Add calculated columns to a pandas DataFrame and compute revenue by region from sales.csv."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2"]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.15"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["test_virtual_column.py", "tests"]
+
+[tool.ruff]
+line-length = 88
+# Provided with the task; kept exactly as received.
+extend-exclude = ["test_virtual_column.py"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # import sorting
+    "B",   # bugbear: likely bugs
+    "UP",  # pyupgrade: modern syntax
+    "N",   # pep8 naming
+    "SIM", # simplifications
+    "C4",  # comprehensions
+    "RET", # return statements
+    "PTH", # pathlib instead of os.path
+    "PD",  # pandas-vet
+    "PT",  # pytest style
+    "RUF", # ruff-specific rules
+]
